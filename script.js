@@ -3,6 +3,8 @@ let numeros = [] //Declara array global
 function adicionarNumero() {
   //Cria referência aos elementos da página
   let inNumero = document.getElementById('inNumero')
+  let outNumeros = document.getElementById('outNumeros')
+  let outTexto = document.getElementById('outTexto')
 
   let numero = Number(inNumero.value) //Obtem conteúdo do campo de entrada
 
@@ -24,8 +26,11 @@ function adicionarNumero() {
 
   //Percorre os elementos do array
   for (let i = 1; i < numeros.length; i++) {
-    listaDeNumeros += numeros[i]
+    listaDeNumeros +=  numeros[i]
   }
-
+  outNumeros.textcontent = primeiroNumero + listaDeNumeros
+  outTexto.textContent = ''
 }
+let btAdicionar = document.getElementById('btAdicionar')
+btAdicionar.addEventListener('click', adicionarNumero)
 
