@@ -31,6 +31,25 @@ function adicionarNumero() {
   outNumeros.textcontent = primeiroNumero + listaDeNumeros
   outTexto.textContent = ''
 }
+//Cria referência ao btAdicionar e associa function ao evento click deste botão
 let btAdicionar = document.getElementById('btAdicionar')
 btAdicionar.addEventListener('click', adicionarNumero)
+
+function verificarOrdem() {
+  
+  if (numeros.length == 0) {
+    alert('Adicione um número')
+    return
+  }
+  //Percorre os elementos do array
+  for (let i = 0; i < numeros.length -1; i++) {
+    if (numeros[i] < numeros[i -1]) {
+      outTexto.textContent = 'Os números estão em órdem crescente!'
+    }else{
+      outTexto.textContent = 'Atenção... os números não estão em órdem crescentes!'
+    }
+  }
+}
+let btVerificar = document.getElementById('btVerificar')
+btVerificar.addEventListener('click', verificarOrdem)
 
